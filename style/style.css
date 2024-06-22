@@ -1,0 +1,385 @@
+/* *{
+    background-color: black;
+    color: white;
+} */
+
+/* styles.css */
+*{
+    /* font-family: ; */
+}
+a{
+    text-decoration: none;
+}
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #000;
+    color: #fff;
+}
+
+header {
+    background: #000;
+    padding: 20px 0;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo{
+    display: inline-block;
+}
+.logo h1 {
+    margin: 0;
+    font-size: 24px;
+    color: #fff;
+}
+.logo h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #fff;
+}
+
+
+.hero {
+    background: url('../img/web\ cover\ final.png') no-repeat center center/cover;
+    padding: 5rem 1rem;
+    min-height: min( 60vh , 450px);
+    display: flex;
+    align-items: center;
+}
+
+
+.hero h2 {
+    font-size: 36px;
+    margin: 0;
+}
+
+
+.gradient-border {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 5px;
+    /* Adjust based on the height of the gradient bar */
+    font-size: 24px;
+    /* Adjust font size as needed */
+    color: #fff;
+    /* Text color */
+}
+
+.gradient-border::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0px;
+    width: 100%;
+    height: 3px;
+    padding-right: 10px;
+    /* Adjust height of the gradient bar */
+    background: linear-gradient(90deg, #f79533, #f37055, #ef4e7b, #a166ab, #6fba82, #07b39b, #5088b8, #1032ad);
+    background-size: 200% 100%;
+    /* Adjust based on animation */
+    border-radius: 5px;
+    /* Adjust radius as needed */
+    animation: gradient 6s linear infinite;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+.hero h1 {
+    font-size: 48px;
+    margin: 10px 0;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+}
+
+.hero p {
+    font-size: 15px;
+    color: #a4a4a4;
+}
+/* 
+.hero .btn {
+    background: #A700FF;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 20px;
+} */
+.contact form button,
+.hero .btn {
+    --border-color: linear-gradient(-45deg, #ffae00, #7e03aa, #00fffb);
+    --border-width: 0.125em;
+    --curve-size: 0em;
+    --blur: 30px;
+    --bg: #080312;
+    --color: #afffff;
+    color: var(--color);
+    cursor: pointer;
+    /* use position: relative; so that BG is only for .btn */
+    position: relative;
+    isolation: isolate;
+    display: inline-grid;
+    place-content: center;
+    padding: 0.5em 1.5em;
+    font-size: 17px;
+    border: 0;
+    text-transform: uppercase;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.6);
+    clip-path: polygon(
+            /* Top-left */
+            0% var(--curve-size),
+            var(--curve-size) 0,
+            /* top-right */
+            100% 0,
+            100% calc(100% - var(--curve-size)),
+            /* bottom-right 1 */
+            calc(100% - var(--curve-size)) 100%,
+            /* bottom-right 2 */
+            0 100%);
+    transition: color 250ms;
+}
+.contact form button::after,
+.contact form button::before,
+.hero .btn::after,
+.hero .btn::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+}
+.contact form button::before,
+.hero .btn::before {
+    background: var(--border-color);
+    background-size: 300% 300%;
+    animation: move-bg7234 5s ease infinite;
+    z-index: -2;
+}
+
+@keyframes move-bg7234 {
+    0% {
+        background-position: 31% 0%;
+    }
+
+    50% {
+        background-position: 70% 100%;
+    }
+
+    100% {
+        background-position: 31% 0%;
+    }
+}
+.contact form button::after,
+.hero .btn::after {
+    background: var(--bg);
+    z-index: -1;
+    clip-path: polygon(
+            /* Top-left */
+            var(--border-width) calc(var(--curve-size) + var(--border-width) * 0.5),
+            calc(var(--curve-size) + var(--border-width) * 0.5) var(--border-width),
+            /* top-right */
+            calc(100% - var(--border-width)) var(--border-width),
+            calc(100% - var(--border-width)) calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)),
+            /* bottom-right 1 */
+            calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)) calc(100% - var(--border-width)),
+            /* bottom-right 2 */
+            var(--border-width) calc(100% - var(--border-width)));
+    transition: clip-path 500ms;
+}
+.contact form button:where(:hover, :focus)::after,
+.hero .btn:where(:hover, :focus)::after {
+    clip-path: polygon(
+            /* Top-left */
+            calc(100% - var(--border-width)) calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)),
+            calc(100% - var(--border-width)) var(--border-width),
+            /* top-right */
+            calc(100% - var(--border-width)) var(--border-width),
+            calc(100% - var(--border-width)) calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)),
+            /* bottom-right 1 */
+            calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)) calc(100% - var(--border-width)),
+            /* bottom-right 2 */
+            calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)) calc(100% - var(--border-width)));
+    transition: 200ms;
+}
+.contact form button:where(:hover, :focus),
+.hero .btn:where(:hover, :focus) {
+    color: #fff;
+}
+
+/* about */
+.about {
+    text-align: center;
+    padding: 5rem min(10rem , 8vw);
+    min-height: min(50vh, 400px);
+    position: relative;
+    font-family:'Times New Roman', Times, serif;
+    display: flex;
+    align-items: center;
+}
+
+.about::after {
+    z-index: -1;
+    content: ' ';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.1;
+    background-image: url('../img/premier\ timeline.png');
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    background-size: cover;
+
+}
+
+
+.about h2 {
+    font-size: 36px;
+}
+
+.about p {
+    font-size: 18px;
+    margin: 20px 0;
+}
+
+.services span {
+    display: inline-block;
+    font-weight: 700;
+    font-size: 20px;
+    background: #33333300;
+    padding: 10px 1vw;
+    margin-right: none;
+    margin-left: none;
+    border-radius: 5px;
+}
+.services span::after{
+    content: '';
+    width: 10px;
+    height: 10px;
+    background-color: #00fffb;
+    /* background-color : linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82); */
+    border-radius: 50%;
+    display: inline-block;
+    margin-left: 50px;
+}
+.services span:last-child::after{
+    content: '';
+    height: 0px;
+    width: 0px;
+}
+
+.about .anim{
+    
+    animation: aboutAn linear both;
+    animation-timeline: view(block);
+    animation-range: cover 0% contain 45%;
+}
+@keyframes aboutAn {
+    0% {
+        /* background-position: 0% 0%; */
+        margin-right: 100vw;
+        margin-left: -100vw;
+        opacity: 0;
+    }
+
+    100% {
+        margin-right: none;
+        margin-left: none;
+        /* background-position: 50% 0%; */
+        opacity: 1;
+    }
+}
+/* videos */
+.portfolio {
+    padding: 5rem 5rem;
+    text-align: center;
+}
+
+.portfolio h2 {
+    font-size: 36px;
+}
+
+.portfolio-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.portfolio-item {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.portfolio-item img {
+    width: 200px;
+    height: auto;
+    border-radius: 10px;
+}
+
+.portfolio-item p {
+    margin-top: 10px;
+}
+
+  .form {
+      --width-of-input: 200px;
+      --border-height: 1px;
+      --border-before-color: rgba(221, 221, 221, 0.39);
+      --border-after-color: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #6fba82, #07b39b, #5088b8, #1032ad);
+      --input-hovered-color: #4985e01f;
+      position: relative;
+      width: var(--width-of-input);
+  }
+
+  /* styling of Input */
+  .input {
+      color: #fff;
+      font-size: 0.9rem;
+      background-color: #1c1c1c7c;
+      width: 100%;
+      box-sizing: border-box;
+      padding-inline: 0.5em;
+      padding-block: 0.7em;
+      border: none;
+      border-bottom: var(--border-height) solid var(--border-before-color);
+  }
+
+  /* styling of animated border */
+  .input-border {
+      position: absolute;
+      background: var(--border-after-color);
+      width: 0%;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      transition: 0.3s;
+  }
+
+  /* Hover on Input */
+  input:hover {
+      background: var(--input-hovered-color);
+  }
+
+  input:focus {
+      outline: none;
+  }
+
+  /* here is code of animated border */
+  input:focus~.input-border {
+      width: 100%;
+  }
+
