@@ -70,14 +70,24 @@
       transition-duration: .3s;
       transform-origin:right;
     } */
+         .d-none {
+             display: none !important;
+             transform: scaleY(0) !important;
+             transform-origin: top;
+             transition: 10s;
+         }
     nav{
         position: absolute;
-        display: block;
         width: 100%;
         right: 0px;
         top:50px;
         z-index: 20;
+        transform: scaleY(1);
+        transform-origin: top;
+        transition: 10s;
+
     }
+       
     nav ul{
         margin-top: 0;
         padding: 0;
@@ -92,11 +102,14 @@
         color: #fff;
         font-weight: 700;
     }
-    .d-none{
-        display: none !important;
-        transition-duration: 1s;
+   
+    .hero {
+        /* background: url('../img/web\ cover\ final.png') no-repeat center center/cover; */
+        padding: 5rem 1rem;
+        min-height: min(60vh, 450px);
+        display: flex;
+        align-items: center;
     }
-
     .hero .container {
         margin-left: none;
     }
@@ -106,36 +119,109 @@
     .contact .container{
 
     }
+
+        /* about */
+    .about {
+        text-align: center;
+        padding: 5rem min(2rem, 6vw);
+        min-height: min(50vh, 400px);
+        position: relative;
+        font-family: 'Times New Roman', Times, serif;
+        display: flex;
+        align-items: center;
+    }
       
-        .contact {
-            padding: 5rem 1rem;
-            text-align: left;
-        }
-    
-        .contact h2 {
-            text-align: left;
-            font-size: 36px;
-            text-transform: uppercase;
-        }
-    
-        .contact form {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            margin-top: 20px;
-            margin: 20px 0;
-        }
-    
-        .contact form label,
-        .contact form input {
-            display: inline-block;
-            padding: 10px;
-            min-width: 45%;
-            margin-top: 20px;
-        }
-        .contact form button{
-            margin-top: 10px;
-        }
+    /* .contact {
+        padding: 5rem 1rem;
+        text-align: left;
+    }
+
+    .contact h2 {
+        text-align: left;
+        font-size: 36px;
+        text-transform: uppercase;
+    }
+
+    .contact form {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        margin-top: 20px;
+        margin: 20px 0;
+    }
+
+    .contact form label,
+    .contact form input {
+        display: inline-block;
+        padding: 10px;
+        min-width: 45%;
+        margin-top: 20px;
+    }
+    .contact form button{
+        margin-top: 10px;
+    } */
+
+    .contact {
+        padding: 1rem 3rem;
+        text-align: left;
+    }
+
+    .contact h2 {
+        text-align: center;
+        font-size: 1.8rem;
+        text-transform: uppercase;
+        margin-bottom: 0;
+    }
+
+    .contact form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 20px 0;
+    }
+
+    .contact form label,
+    .contact form input {
+        display: inline-block;
+        padding: 10px;
+        border: none;
+    }
+
+    .contact form button {
+        background: #A700FF;
+        color: #fff;
+        margin-top: 10px;
+        margin-left: 10px;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+    }
+
+    .contact-info {
+        display: flex;
+        flex-direction: column;
+        align-items:start;
+        /* margin: 20px; */
+    }
+    .contact-info h2 {
+        display: block;
+        margin-bottom: 20px;
+    }
+    .contact-info p {
+        margin: 5px 10vw 5px 0px;
+    }
+
+    footer {
+        background: #000;
+        padding: 20px 0;
+        text-align: center;
+    }
+
+    footer .back-to-top {
+        color: #A700FF;
+        text-decoration: none;
+        font-size: 16px;
+    }
 }
 @media (min-width: 768px){
     .logo h1,
@@ -199,72 +285,87 @@
         nav ul li a i {
             margin: 0px 10px;
         }
-
+    .hero {
+        background: url('../img/web\ cover\ final.png') no-repeat center center/cover;
+        padding: 5rem 1rem;
+        min-height: min(60vh, 450px);
+        display: flex;
+        align-items: center;
+    }
     .hero .container {
         margin-left: 5rem;
     }
     .hero h1{
         width: 600px;
     }
-        .contact {
-            padding: 5rem 8rem;
-            text-align: left;
-        }
-    
-        .contact h2 {
-            text-align: left;
-            font-size: 36px;
-            text-transform: uppercase;
-        }
-    
-        .contact form {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            margin: 20px 0;
-        }
-    
-        .contact form label,
-        .contact form input {
-            display: inline-block;
-            padding: 10px;
-            border: none;
-        }
-    
-    
-    
 
+    /* about */
+    .about {
+        text-align: center;
+        padding: 5rem min(10rem, 8vw);
+        min-height: min(50vh, 400px);
+        position: relative;
+        font-family: 'Times New Roman', Times, serif;
+        display: flex;
+        align-items: center;
+    }
     
-    
-        .contact form button {
-            background: #A700FF;
-            color: #fff;
-            margin-left: 10px;
-            padding: 10px 20px;
-            border: none;
-            cursor: pointer;
-        }
-    
-        .contact-info {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            /* margin: 20px; */
-        }
-    
-        .contact-info p {
-            margin: 5px 10vw 5px 0px;
-        }
-    
-        footer {
-            background: #000;
-            padding: 20px 0;
-            text-align: center;
-        }
-    
-        footer .back-to-top {
-            color: #A700FF;
-            text-decoration: none;
-            font-size: 16px;
-        }
+    .contact {
+        padding: 5rem 8rem;
+        text-align: left;
+    }
+
+    .contact h2 {
+        text-align: left;
+        font-size: 36px;
+        text-transform: uppercase;
+    }
+
+    .contact form {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin: 20px 0;
+    }
+
+    .contact form label,
+    .contact form input {
+        display: inline-block;
+        padding: 10px;
+        border: none;
+    }
+    .contact form button {
+        background: #A700FF;
+        color: #fff;
+        margin-left: 10px;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+    }
+
+    .contact-info {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        /* margin: 20px; */
+    }
+    .contact-info h2{
+        display: none;
+    }
+    .contact-info p {
+        margin: 5px 10vw 5px 0px;
+        font-size: 1.1rem;
+    }
+
+    footer {
+        background: #000;
+        padding: 20px 0;
+        text-align: center;
+    }
+
+    footer .back-to-top {
+        color: #A700FF;
+        text-decoration: none;
+        font-size: 16px;
+    }
 }
