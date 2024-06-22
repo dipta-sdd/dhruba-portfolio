@@ -32,13 +32,25 @@ header .container {
 }
 .logo h1 {
     margin: 0;
+    padding-left: 50px;
     font-size: 24px;
     color: #fff;
+    position: relative;
 }
 .logo h3 {
     margin: 0;
     font-size: 1.1rem;
     color: #fff;
+    padding-left: 50px;
+}
+.logo img{
+    width: 50px;
+    display: inline-block;
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    top: 0;
+    left: 0;
 }
 
   nav ul a{
@@ -248,7 +260,7 @@ header .container {
     
     animation: aboutAn linear both;
     animation-timeline: view(block);
-    animation-range: cover 0% contain 45%;
+    animation-range: cover 10% contain 45%;
 }
 @keyframes aboutAn {
     0% {
@@ -278,8 +290,27 @@ header .container {
         text-align: center;
     }
 }
+.portfolio-comb{
+    position: relative;
+}
+.portfolio-comb::after {
+    z-index: -1;
+    content: ' ';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.1;
+    background-image: url('../img/reel.png');
+    background-repeat: repeat;
+        /* Change to repeat */
+        background-position: 0 0;
+        /* Optional: positions image to top left */
+        background-size: 100vw auto;
 
-
+}
 .portfolio h2 {
     font-size: 36px;
 }
@@ -357,3 +388,32 @@ header .container {
     color:#00fffb;
   }
 
+footer {
+    background:transparent;
+    padding: 10px 0;
+    text-align: center;
+    position: relative;
+    margin: 0;
+}
+
+footer::after {
+    z-index: -1;
+    content: ' ';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.3;
+    background: linear-gradient(90deg, #f79533, #f37055, #ef4e7b, #a166ab, #6fba82, #07b39b, #5088b8, #1032ad);
+    background-repeat: repeat;
+    /* Change to repeat */
+    background-position: 0 0;
+    /* Optional: positions image to top left */
+    background-size: 100vw auto;
+}
+footer p{
+    padding: 0;
+    margin: 0;
+}
