@@ -105,10 +105,10 @@
    
     .hero {
         /* background: url('../img/mbl\ cover.png') no-repeat center center/cover; */
-        padding: 5rem 1rem;
+        padding: 5rem 1rem 1rem 1rem;
         min-height: min(60vh, 450px);
         display: flex;
-        align-items: center;
+        align-items: end;
         position: relative;
     }
     .hero::after {
@@ -120,7 +120,7 @@
         top: 0;
         width: 100%;
         height: 100%;
-        opacity: 0.5;
+        opacity: 0.9;
         background-image: url('../img/mbl\ cover.png');
         background-repeat: no-repeat;
         background-position: 50% 0;
@@ -131,9 +131,17 @@
     .hero .container {
         margin-left: none;
     }
+        .hero h2 {
+            font-size: 2vwpx;
+            margin: 0;
+        }
     .hero h1{
         width: 100%;
+        font-size: 5vw;
     }
+
+    .hero p{
+        color: #00ffff;    }
     .contact .container{
 
     }
@@ -286,6 +294,10 @@
     .hero .container {
         margin-left: 5rem;
     }
+        .hero h2 {
+            font-size: 36px;
+            margin: 0;
+        }
     .hero h1{
         width: 600px;
     }
@@ -345,6 +357,7 @@
     }
     .contact-info p {
         margin: 5px 10vw 5px 0px;
+        margin-right: auto;
         font-size: 1.1rem;
     }
 
