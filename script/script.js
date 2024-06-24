@@ -16,7 +16,7 @@ $(document).ready(function () {
 
     // Send the data using jQuery AJAX
     $.ajax({
-      url: "http://127.0.0.1/contact.php", // Replace with your API URL
+      url: "/contact.php", // Replace with your API URL
       type: "POST",
       data: formData,
       success: function (response) {
