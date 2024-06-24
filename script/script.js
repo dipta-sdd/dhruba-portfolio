@@ -1,36 +1,31 @@
-document.getElementById("contactForm").addEventListener("submit", function (e) {
-  e.preventDefault(); // Prevent the default form submission
+$(document).ready(function () {
+  $("#contactForm").on("submit", function (e) {
+    e.preventDefault(); // Prevent the default form submission
 
-  // Collect data from the form
-  const sender = document.getElementById("sender").value;
-  const interest = document.getElementById("interest").value;
-  const email = document.getElementById("email").value;
+    // Collect data from the form
+    var sender = $("#sender").val();
+    var interest = $("#interest").val();
+    var email = $("#email").val();
 
-  // Create an object to send to the server
-  const formData = {
-    sender: sender,
-    interest: interest,
-    email: email,
-  };
+    // Create an object to send to the server
+    var formData = {
+      sender: sender,
+      interest: interest,
+      email: email,
+    };
 
-  // Send the data using Fetch API
-  fetch("contact.php", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(formData),
-  })
-    .then((response) => response.json())
-    .then((data) => {
-      if (data.success) {
+    // Send the data using jQuery AJAX
+    $.ajax({
+      url: "http://127.0.0.1/contact.php", // Replace with your API URL
+      type: "POST",
+      data: formData,
+      success: function (response) {
         alert("Form submitted successfully");
-      } else {
+      },
+      error: function (xhr, status, error) {
+        console.error("Error:", error);
         alert("Error submitting form");
-      }
-    })
-    .catch((error) => {
-      console.error("Error:", error);
-      alert("Error submitting form");
+      },
     });
+  });
 });

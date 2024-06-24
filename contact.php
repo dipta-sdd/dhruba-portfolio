@@ -3,7 +3,32 @@ $servername = "localhost"; // Your database server
 $username = "sankarsa_dhruba"; // Your database username
 $password = "Spider@2580"; // Your database password
 $dbname = "sankarsa_dhruba"; // Your database name
+echo ""sdfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfg;
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    // Get data from POST request
+    echo 'hhhhhhhhhhh';
+    echo $sender;
+    $sender = $_POST['sender'];
+    echo $sender;
+    $interest = $_POST['interest'];
+    $email = $_POST['email'];
 
+    // Prepare and bind
+    $stmt = $conn->prepare("INSERT INTO message (sender, interest, email) VALUES (?, ?, ?)");
+    $stmt->bind_param("sss", $sender, $interest, $email);
+
+    // Execute the statement
+    if ($stmt->execute()) {
+        echo "New record created successfully";
+    } else {
+        echo "Error: " . $stmt->error;
+    }
+
+    // Close the statement
+    $stmt->close();
+} else {
+    echo "No data posted";
+}
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -31,11 +56,12 @@ if ($result->num_rows == 0) {
         die("Error creating table: " . $conn->error);
     }
 } 
-
 // Check if data is sent via POST method
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Get data from POST request
+    echo $sender;
     $sender = $_POST['sender'];
+    echo $sender;
     $interest = $_POST['interest'];
     $email = $_POST['email'];
 
