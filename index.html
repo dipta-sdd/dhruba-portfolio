@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Professional Video Editor - Jimmy Turner</title>
+    <title>Showrav Das</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -18,7 +18,7 @@
     <header id="home">
       <div class="container header">
         <div class="logo">
-          <h1><img src="./img/logo.png" alt="logo" />Showrav Das</h1>
+          <h1>Showrav Das</h1>
           <h3>Video Editor</h3>
         </div>
         <div class="toggle-btn">
@@ -52,7 +52,12 @@
     <section class="hero">
       <div class="container">
         <h2 class="gradient-border">Showrav Das</h2>
-        <h1>Professional Video Editor</h1>
+        <h1>
+          Passionate <br />
+          <span style="color: rgb(255, 255, 255)">Video Editor</span> <br />
+          & <br />
+          <span style="color: rgb(255, 255, 255)">motion designer</span>
+        </h1>
         <p>Making Your Videos Look More Cool.</p>
         <a href="#contact" class="btn">Let's Talk</a>
         <a href="/img/Showrav Das Resume.pdf" class="btn" download
@@ -70,7 +75,7 @@
         <div class="anim">
           <h2 class="gradient-border">About Me</h2>
           <p>
-            Welcome To The Cinematic Realm Of Jimmy, Where Creativity Meets
+            Welcome To The Cinematic Realm Of Showrav, Where Creativity Meets
             Technology To Craft Visually Stunning Narratives. With A Passion For
             Storytelling And A Keen Eye For Detail, I Embark On A Journey To
             Transform Ordinary Footage Into Extraordinary Visual Experiences.
@@ -99,6 +104,18 @@
                 allowfullscreen
               ></iframe>
               <p>Kinetic Typology</p>
+            </div>
+
+            <div class="portfolio-item">
+              <iframe
+                width="320"
+                height="180"
+                src="https://www.youtube.com/embed/51tPgm1yY-U?autoplay=0&mute=1&loop=1"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+              ></iframe>
+              <p>Perfume</p>
             </div>
             <div class="portfolio-item">
               <iframe
@@ -173,11 +190,12 @@
     <section class="contact">
       <div class="container">
         <h2 class="gradient-border">I Am Ready To Consult You</h2>
-        <form action="#">
+        <form id="contactForm">
           <label for="" style="max-width: 30vw">My Name Is</label>
           <div class="form">
             <input
               class="input"
+              id="sender"
               placeholder="Your Name"
               required=""
               type="text"
@@ -189,9 +207,22 @@
           <div class="form">
             <input
               class="input"
+              id="interest"
               placeholder="Message"
               required=""
               type="text"
+            />
+            <span class="input-border"></span>
+          </div>
+          <label for="" style="max-width: 30vw">My email / phone no is</label>
+          <div class="form">
+            <input
+              class="input"
+              id="email"
+              placeholder="Email/Phone"
+              required=""
+              type="text"
+              style="text-transform: capitalize"
             />
             <span class="input-border"></span>
           </div>
@@ -201,11 +232,19 @@
         </form>
         <div class="contact-info" id="contact">
           <h2 class="gradient-border">Contact With Me</h2>
-          <p><i class="fa-solid fa-phone"></i>+88 01622-464282</p>
+          <p>
+            <a href="tel:+8801622464282"
+              ><i class="fa-solid fa-phone"></i>+88 01622-464282</a
+            >
+          </p>
           <p>
             <i class="fa-solid fa-location-dot"></i>Bagbari, Sylhet, Bangladesh
           </p>
-          <p><i class="fa-solid fa-envelope"></i>myself@showrav-dhruba.xyz</p>
+          <p>
+            <a href="mailto:myself@showrav-dhruba.xyz"
+              ><i class="fa-solid fa-envelope"></i>myself@showrav-dhruba.xyz</a
+            >
+          </p>
         </div>
       </div>
     </section>
@@ -226,4 +265,5 @@
       });
     </script>
   </body>
+  <script src="./script/script.js"></script>
 </html>

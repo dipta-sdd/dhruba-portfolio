@@ -104,12 +104,30 @@
     }
    
     .hero {
-        /* background: url('../img/web\ cover\ final.png') no-repeat center center/cover; */
+        /* background: url('../img/mbl\ cover.png') no-repeat center center/cover; */
         padding: 5rem 1rem;
         min-height: min(60vh, 450px);
         display: flex;
         align-items: center;
+        position: relative;
     }
+    .hero::after {
+        z-index: -1;
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.5;
+        background-image: url('../img/mbl\ cover.png');
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        background-size: cover;
+
+    }
+    
     .hero .container {
         margin-left: none;
     }
@@ -258,11 +276,12 @@
             margin: 0px 10px;
         }
     .hero {
-        background: url('../img/web\ cover\ final.png') no-repeat center center/cover;
+        background: url('../img/web\ cover.png') no-repeat center center/cover;
         padding: 5rem 1rem;
         min-height: min(60vh, 450px);
         display: flex;
         align-items: center;
+        background-position: 0 10%;
     }
     .hero .container {
         margin-left: 5rem;
